@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ClsBanking.cs" />
     <Compile Include="ClsSpecialBanking.cs" />
+    <Compile Include="ClsTools.cs" />
     <Compile Include="FrmLogOn.cs">
       <SubType>Form</SubType>
     </Compile>
