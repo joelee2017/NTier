@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banking;
+using ClassLibrary1;
 
 
 namespace WindowsFormsApp1
@@ -26,6 +27,59 @@ namespace WindowsFormsApp1
 
             ClsSpecialBanking b = new ClsSpecialBanking();
             MessageBox.Show(b.Deposit(1000).ToString());
+        }
+
+        ClsTools ct = new ClsTools();        
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            checkBox1.Enabled = false;
+            comboBox1.Items.Add("汽車");
+            comboBox1.Items.Add("船");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if( comboBox1.Text == "汽車")
+            {
+                ClsCar cc = new ClsCar();
+            }
+            else if(comboBox1.Text =="船")
+            {
+                ClsBoat cb = new ClsBoat();
+                checkBox1.Enabled = true;
+            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "汽車")
+            {
+                ClsCar cc = new ClsCar();
+                TotalMile.Text = cc.ClsTools1(int.Parse(Miletext.Text), int.Parse(Oiltext.Text)).ToString();
+
+            }
+            else if (comboBox1.Text == "船")
+            {
+                if(checkBox1.Checked == true)
+                {
+                    ClsSailBoat csb = new ClsSailBoat();
+                    TotalMile.Text = csb.ClsTools1(int.Parse(Miletext.Text), int.Parse(Oiltext.Text)).ToString();
+                }
+                else
+                {
+                    ClsBoat cb = new ClsBoat();
+                    TotalMile.Text = cb.ClsTools1(int.Parse(Miletext.Text), int.Parse(Oiltext.Text)).ToString();
+                }                
+
+            }
+
+            checkBox1.Enabled = false;
+
+               // TotalMile.Text = ct.ClsTools1(int.Parse(Miletext.Text), int.Parse(Oiltext.Text)).ToString();
+
         }
     }
 }

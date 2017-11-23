@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsBanking.cs" />
+    <Compile Include="ClsBoat.cs" />
+    <Compile Include="ClsCar.cs" />
+    <Compile Include="ClsSailBoat.cs" />
     <Compile Include="ClsSpecialBanking.cs" />
     <Compile Include="ClsTools.cs" />
     <Compile Include="FrmLogOn.cs">
@@ -57,6 +60,10 @@
     <EmbeddedResource Include="FrmLogOn.resx">
       <DependentUpon>FrmLogOn.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
