@@ -81,5 +81,17 @@ namespace WindowsFormsApp1
                // TotalMile.Text = ct.ClsTools1(int.Parse(Miletext.Text), int.Parse(Oiltext.Text)).ToString();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.productsTableAdapter1.Fill(this.northWindDataSet1.Products);
+            this.dataGridView1.DataSource = this.northWindDataSet1.Products;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            global::ClassLibrary3.ClsProduct x = new ClassLibrary3.ClsProduct();
+            this.dataGridView1.DataSource = x.GetProducts();
+        }
     }
 }
